@@ -28,6 +28,7 @@
                 <th>Via</th>
                 <th>Sensor</th>
                 <th>Estado</th>
+                <th>Fecha</th>
                     <c:forEach items="${allEvento}" var="ev">
                     <tr>
                         <td>${ev.idEvento}</td>
@@ -35,6 +36,7 @@
                         <td>${ev.via}</td>
                         <td>${ev.sensor}</td>
                         <td>${ev.estado}</td>
+                        <td>${ev.fecha}</td>
                     </tr>
                 </c:forEach> 
             </table>

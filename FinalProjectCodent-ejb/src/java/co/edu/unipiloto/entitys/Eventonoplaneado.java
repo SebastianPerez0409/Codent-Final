@@ -50,13 +50,17 @@ public class Eventonoplaneado implements Serializable {
     @Size(max = 20)
     @Column(name = "ESTADO")
     private String estado;
+    @Size(max = 20)
+    @Column(name = "FECHA")
+    private String fecha;
 
-    public Eventonoplaneado(Integer idEvento, String descripcion, String via, String sensor, String estado) {
+    public Eventonoplaneado(Integer idEvento, String descripcion, String via, String sensor, String estado, String fecha) {
         this.idEvento = idEvento;
         this.descripcion = descripcion;
         this.via = via;
         this.sensor = sensor;
         this.estado = estado;
+        this.fecha = fecha;
     }
 
     public Eventonoplaneado() {
@@ -105,6 +109,17 @@ public class Eventonoplaneado implements Serializable {
     public void setSensor(String sensor) {
         this.sensor = sensor;
     }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    
+    
 
     @Override
     public int hashCode() {

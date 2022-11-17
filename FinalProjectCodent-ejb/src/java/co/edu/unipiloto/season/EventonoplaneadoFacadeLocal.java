@@ -35,5 +35,7 @@ public interface EventonoplaneadoFacadeLocal {
     String generarDescAleatoria();
 
     Integer generarSensorAleatorio();
+    
+    public String [] panelesStrings( String via);
 
 }

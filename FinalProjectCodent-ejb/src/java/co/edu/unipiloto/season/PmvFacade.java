@@ -24,6 +24,9 @@ public class PmvFacade extends AbstractFacade<Pmv> implements PmvFacadeLocal {
     protected EntityManager getEntityManager() {
         return em;
     }
+    
+    
+    
 
     public PmvFacade() {
         super(Pmv.class);

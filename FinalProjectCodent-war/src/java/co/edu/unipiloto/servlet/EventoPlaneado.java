@@ -44,12 +44,12 @@ public class EventoPlaneado extends HttpServlet {
 
         request.setAttribute("allEvento", eventoplaneadoFacade.findAll());
         request.getRequestDispatcher("eventoplaneado.jsp").forward(request, response);
-
+        String fecha = request.getParameter("selectFecha");
         String action = request.getParameter("action");
         String id = request.getParameter("idEvento");
         int idInt = Integer.parseInt(id);
         Eventoplaneado ev;
-        ev = new Eventoplaneado(eventoplaneadoFacade.find(idInt).getIdEvento(), eventoplaneadoFacade.find(idInt).getDescripcion(), eventoplaneadoFacade.find(idInt).getVia(), eventoplaneadoFacade.find(idInt).getSensor(), "Activo");
+        ev = new Eventoplaneado(eventoplaneadoFacade.find(idInt).getIdEvento(), eventoplaneadoFacade.find(idInt).getDescripcion(), eventoplaneadoFacade.find(idInt).getVia(), eventoplaneadoFacade.find(idInt).getSensor(), "Activo", fecha );
 
         if ("ACTIVAR EVENTO".equalsIgnoreCase(action)) {
             eventoplaneadoFacade.edit(ev);

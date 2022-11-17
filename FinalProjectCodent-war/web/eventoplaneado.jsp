@@ -11,14 +11,13 @@
             <br>
             <button> MOSTRAR EVENTOS </button>
             <br>
-            <br>
-            <br>
             <table border="1">
                 <th>ID</th>
                 <th>Descripcion</th>
                 <th>Via</th>
                 <th>Sensor</th>
                 <th>Estado</th>
+                <th>Fecha</th>
                     <c:forEach items="${allEvento}" var="ev">
                     <tr>
                         <td>${ev.idEvento}</td>
@@ -26,14 +25,28 @@
                         <td>${ev.via}</td>
                         <td>${ev.sensor}</td>
                         <td>${ev.estado}</td>
+                        <td>${ev.fecha}</td>
                     </tr>
                 </c:forEach> 
             </table>
             <table>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <tr>
+                <label for="start">Seleccione la fecha: </label>
+
+                <input type="date" name="selectFecha"
+                       value="2022-11-16"
+                       min="2022-11-16" max="2023-12-31">
+                </tr>
                 <tr>
                     <td>Digíte el ID del evento que desea activar</td>
                     <td><input type="text" name="idEvento"/></td>
                 </tr>
+
             </table>
             <br>
             <input type="submit" name="action" value="ACTIVAR EVENTO" />

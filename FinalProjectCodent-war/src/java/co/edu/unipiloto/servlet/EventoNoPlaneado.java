@@ -18,6 +18,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -43,10 +46,11 @@ public class EventoNoPlaneado extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String action = request.getParameter("action");
+        LocalDate todaysDate = LocalDate.now();
         String id = request.getParameter("idEvento");
         int idInt = Integer.parseInt(id);
         if ("GENERAR EVENTO ALEATORIO".equalsIgnoreCase(action)) {
-            eventonoplaneadoFacade.create(new Eventonoplaneado(idInt, eventonoplaneadoFacade.generarDescAleatoria(), eventonoplaneadoFacade.generarViaAleatoria(), eventonoplaneadoFacade.generarSensorAleatorio() + "", "Activo"));
+            eventonoplaneadoFacade.create(new Eventonoplaneado(idInt, eventonoplaneadoFacade.generarDescAleatoria(), eventonoplaneadoFacade.generarViaAleatoria(), eventonoplaneadoFacade.generarSensorAleatorio() + "", "Activo", todaysDate + "" ));
         }
 
         response.setContentType("text/html;charset=UTF-8");

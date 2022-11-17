@@ -68,4 +68,20 @@ public class EventonoplaneadoFacade extends AbstractFacade<Eventonoplaneado> imp
         return sens[al];
     }
     
+    @Override
+    public String [] panelesStrings( String via) {
+        String paneles [] = new String [10];
+        switch (via) {
+            case "BOGOTA-VILLAVICENCIO" :
+            break;
+            case "BOGOTA-CALI" :
+            break;
+            case "BUCARAMANGA-BARRANCABERMEJA" :
+            break;
+        }
+        
+        return paneles;
+        
+    }
+    
 }

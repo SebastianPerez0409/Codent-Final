@@ -28,5 +28,4 @@ public class EventoplaneadoFacade extends AbstractFacade<Eventoplaneado> impleme
     public EventoplaneadoFacade() {
         super(Eventoplaneado.class);
     }
-    
 }

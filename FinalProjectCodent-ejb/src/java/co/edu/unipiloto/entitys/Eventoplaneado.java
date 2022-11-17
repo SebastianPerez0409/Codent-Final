@@ -29,7 +29,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Eventoplaneado.findByIdEvento", query = "SELECT e FROM Eventoplaneado e WHERE e.idEvento = :idEvento"),
     @NamedQuery(name = "Eventoplaneado.findByDescripcion", query = "SELECT e FROM Eventoplaneado e WHERE e.descripcion = :descripcion"),
     @NamedQuery(name = "Eventoplaneado.findByVia", query = "SELECT e FROM Eventoplaneado e WHERE e.via = :via"),
-    @NamedQuery(name = "Eventoplaneado.findBySensor", query = "SELECT e FROM Eventoplaneado e WHERE e.sensor = :sensor")})
+    @NamedQuery(name = "Eventoplaneado.findBySensor", query = "SELECT e FROM Eventoplaneado e WHERE e.sensor = :sensor"),
+    @NamedQuery(name = "Eventoplaneado.findByEstado", query = "SELECT e FROM Eventoplaneado e WHERE e.estado = :estado")
+
+})
 public class Eventoplaneado implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,9 @@ public class Eventoplaneado implements Serializable {
     @Size(max = 20)
     @Column(name = "ESTADO")
     private String estado;
+    @Size(max = 20)
+    @Column(name = "FECHA")
+    private String fecha;
 
     public Eventoplaneado() {
     }
@@ -58,16 +64,15 @@ public class Eventoplaneado implements Serializable {
         this.idEvento = idEvento;
     }
 
-    public Eventoplaneado(Integer idEvento, String descripcion, String via, String sensor, String estado) {
+    public Eventoplaneado(Integer idEvento, String descripcion, String via, String sensor, String estado, String fecha) {
         this.idEvento = idEvento;
         this.descripcion = descripcion;
         this.via = via;
         this.sensor = sensor;
         this.estado = estado;
+        this.fecha = fecha;
     }
 
-    
-    
     public String getEstado() {
         return estado;
     }
@@ -76,7 +81,6 @@ public class Eventoplaneado implements Serializable {
         this.estado = estado;
     }
 
-         
     public Integer getIdEvento() {
         return idEvento;
     }
@@ -109,6 +113,16 @@ public class Eventoplaneado implements Serializable {
         this.sensor = sensor;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -133,5 +147,5 @@ public class Eventoplaneado implements Serializable {
     public String toString() {
         return "co.edu.unipiloto.entitys.Eventoplaneado[ idEvento=" + idEvento + " ]";
     }
-    
+
 }
